@@ -1,18 +1,28 @@
-import { useRoutes } from "react-router-dom";
+import { useNavigate, useRoutes } from "react-router-dom";
 import { TailwindIndicator } from "./components/tailwind-indicator";
 import { ModeToggle } from "./components/ui/Button/mode-toggle";
+import { Button } from "./components/ui/Button/button";
+import WorkFlowFile from "./pages/Canvas/WorkflowFile";
 
-const routes = [{ path: "/", element: <Home /> }];
+const routes = [
+  {
+    path: "/",
+    element: <Home />,
+  },
+  { path: "/canvas/add", element: <WorkFlowFile /> },
+];
 
 function Home() {
+  const navigate = useNavigate();
+  const handleCreateNewFile = () => {
+    console.log("Creating a new file");
+    navigate("/canvas/add");
+  };
+
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+    <section className="container flex items-center gap-6 mt-10">
       <ModeToggle />
-      {/* <h1 className="text-4xl font-bold">Welcome to Remix!</h1>
-      <p className="text-lg">
-        This is a starter template for a Remix app. You can start building your
-        app right away.
-      </p> */}
+      <Button onClick={handleCreateNewFile}>Add a new Untitled File</Button>
     </section>
   );
 }
