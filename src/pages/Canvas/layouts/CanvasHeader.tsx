@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Document from "./tabs/Document";
 import Canvas from "./tabs/Canvas";
 import { ETabList } from "@/types/canvasHeader.type";
+import ResizableWorkflowLayout from "./tabs/ResizableWorkflowLayout";
 
 const tabsList = [
   {
@@ -32,12 +33,7 @@ const renderTabItem = (tab: ETabList) => {
     case ETabList.CANVAS:
       return <Canvas />;
     case ETabList.BOTH:
-      return (
-        <div className="flex gap-2">
-          <Document />
-          <Canvas />
-        </div>
-      );
+      return <ResizableWorkflowLayout />;
     default:
       return <Document />;
   }
@@ -49,7 +45,7 @@ const CanvasHeader = () => {
 
   return (
     <div>
-      <div className="flex w-full justify-between px-6 py-8">
+      <div className="flex w-full justify-between px-6 py-8 border-b-2 dark:border-neutral-950 border-gray-100">
         <LeadingSection />
         <HeaderActionTabs />
         <TrailingSection />
