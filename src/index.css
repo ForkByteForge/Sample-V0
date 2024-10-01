@@ -35,36 +35,35 @@
     --radius: 0.5rem;
   }
 
-.dark {
+  .dark {
     --background: 0 0% 10%; /* Lighter black, near dark gray */
     --foreground: 0 0% 90%; /* Light gray for text on dark background */
- 
+
     --card: 0 0% 12%; /* Slightly lighter black for cards */
     --card-foreground: 0 0% 90%; /* Light gray for card text */
- 
+
     --popover: 0 0% 12%; /* Lighter black for popovers */
     --popover-foreground: 0 0% 90%; /* Light gray for popover text */
- 
+
     --primary: 0 0% 90%; /* Light gray for primary text */
     --primary-foreground: 0 0% 15%; /* Darker gray for primary foreground */
- 
+
     --secondary: 0 0% 25%; /* Medium gray for secondary elements */
     --secondary-foreground: 0 0% 90%; /* Light gray for secondary text */
- 
+
     --muted: 0 0% 25%; /* Muted gray tone */
     --muted-foreground: 0 0% 70%; /* Lighter gray for muted foreground */
- 
+
     --accent: 0 0% 25%; /* Gray accent color */
     --accent-foreground: 0 0% 90%; /* Light gray for accent foreground */
- 
+
     --destructive: 0 60% 40%; /* A slightly more vibrant red for destructive actions */
     --destructive-foreground: 0 0% 90%; /* Light gray for destructive foreground */
- 
+
     --border: 0 0% 25%; /* Gray for borders */
     --input: 0 0% 25%; /* Gray for input background */
     --ring: 0 0% 50%; /* Light gray for ring/focus effect */
-}
-
+  }
 }
 
 @layer base {
@@ -74,4 +73,11 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+* {
+  font-family: "Figtree", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
