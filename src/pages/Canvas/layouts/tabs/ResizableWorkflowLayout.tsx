@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
  ** - Add a tooltip to the separator to indicate that the panel can be resized
  ** - Save the last position coordinates of the separator in the local storage
  ** - Add a button to reset the layout to the default position
+ ** - Allow user to select the layout direction (horizontal or vertical)
  * -------------------------------------------------------------------------------
  */
 
@@ -31,10 +32,7 @@ const ResizableWorkflowLayout = () => {
       <Document className="grow bg-darker grid place-items-center min-w-40" />
       {/* Separator between the two panels which can be dragged to resize the panels */}
       <div
-        className={cn(
-          "flex-shrink-0 border-r-2 dark:border-neutral-950 border-gray-100 rounded-full transition-colors duration-150 delay-150 ease-in-out hover:bg-blue-400 hover:cursor-col-resize",
-          isDragging && "bg-blue-400"
-        )}
+        className="flex-shrink-0 border-r-2 dark:border-neutral-950 border-gray-100 rounded-full transition-colors duration-150 delay-150 ease-in-out hover:cursor-col-resize"
         {...separatorProps}
       />
       <Canvas
