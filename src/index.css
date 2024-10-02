@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: 0 0% 10%; /* Lighter black, near dark gray */
+    --background: 0 0% 12.5%; /* Lighter black, near dark gray */
     --foreground: 0 0% 90%; /* Light gray for text on dark background */
 
     --card: 0 0% 12%; /* Slightly lighter black for cards */
